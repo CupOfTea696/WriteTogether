@@ -1,0 +1,49 @@
+.md-makeWay{
+    ~ #container,
+    ~ .md-overlay{
+        transition: all .5s .1s;
+    }
+    
+    .md-content{
+        transform: translateX(200%);
+        opacity: 0;
+        transition: all .5s;
+    }
+    
+    &.md-show{
+        ~ #container,
+        ~ .md-overlay{
+            transform: translateZ(-200px);
+            transform-style: preserve-3d;
+            transform-origin: 0% 50%;
+            animation: md-rotateRightSideFirst .5s ease-in;
+        }
+        
+        ~ #container{
+            transition: none;
+        }
+        
+        ~ .md-overlay{
+            transition: all .5s;
+        }
+        
+        .md-content{
+            transform: translateX(0);
+            opacity: 1;
+            transition: all .5s .1s;
+        }
+    }
+}
+
+@keyframes md-rotateRightSideFirst{
+    0%{
+        transform: translateZ(0);
+    }
+	50%{
+        transform: translateZ(-50px) rotateY(5deg);
+        animation-timing-function: ease-out;
+    }
+	100%{
+        transform: translateZ(-200px);
+    }
+}

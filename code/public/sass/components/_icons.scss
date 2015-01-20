@@ -1,0 +1,27 @@
+.icon-logout:before{
+    display: inline-block;
+    transform: rotateY(180deg);
+}
+
+.icon-menu{
+    position: relative;
+    display: inline-block;
+    width: 25px;
+    height: 32px;
+    overflow: hidden;
+    
+    font-family: 'Simple Line Icons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    
+    &:before{
+        content: "\e067";
+        position: absolute;
+        left: -8px;
+    }
+}

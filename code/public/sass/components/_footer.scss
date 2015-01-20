@@ -1,0 +1,16 @@
+$footer_height: 60px !default;
+$footer_margin: 24px !default;
+
+#container{
+    main{
+        padding-bottom: $footer_height + $footer_margin;
+    }
+    
+    footer{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: $footer_height;
+    }
+}

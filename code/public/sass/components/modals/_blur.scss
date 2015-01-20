@@ -1,0 +1,26 @@
+.md-blur{
+    ~ .md-overlay{
+        background: rgba($mainColor, .8);
+    }
+    
+    ~ #container,
+    .md-content{
+        transition: all .3s;
+    }
+    
+    .md-content{
+        transform: translateY(-5%);
+        opacity: 0;
+    }
+    
+    &.md-show{
+        ~ #container{
+            filter: blur(3px);
+        }
+        
+        .md-content{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}

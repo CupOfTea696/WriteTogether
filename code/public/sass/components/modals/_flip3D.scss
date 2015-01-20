@@ -1,0 +1,39 @@
+[class*=md-flip3D]{
+    @extend %perspective;
+    
+    .md-content{
+        transform-style: preserve-3d;
+        transition: all .3s;
+        opacity: 0;
+    }
+    
+    &.md-show{
+        .md-content{
+            opacity: 1;
+        }
+    }
+}
+
+.md-flip3DHorizontal{
+    .md-content{
+        transform: rotateY(-70deg);
+    }
+    
+    &.md-show{
+        .md-content{
+            transform: rotateY(0deg);
+        }
+    }
+}
+
+.md-flip3DVertical{
+    .md-content{
+        transform: rotateX(-70deg);
+    }
+    
+    &.md-show{
+        .md-content{
+            transform: rotateX(0deg);
+        }
+    }
+}

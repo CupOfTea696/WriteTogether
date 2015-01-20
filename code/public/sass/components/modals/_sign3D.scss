@@ -1,0 +1,18 @@
+.md-sign3D{
+    @extend %perspective;
+    
+    .md-content{
+        transform-style: preserve-3d;
+        transform: rotateX(-60deg);
+        transform-origin: 50% 0;
+        opacity: 0;
+        transition: all .3s;
+    }
+    
+    &.md-show{
+        .md-content{
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+// core
+@import "core/functions";
+@import "core/mixins";
+@import "core/components";
+
+*{
+    outline: none;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body{
+    font-family: $mainFont;
+    background: linear-gradient(to right, #F2785D 0%, #F05863 100%);
+    text-rendering: optimizeLegibility;
+}
+
+#{headings()}{
+    font-family: $headingFont;
+}
+
+#container{
+    min-height: 100%;
+    position: relative;
+}
+
+.clearfix{
+    @include clearfix;
+}

@@ -1,0 +1,18 @@
+.md-sticky{
+    top: 0;
+    transform: translateX(-50%);
+    
+    .md-content{
+        transform: translateY(-200%);
+        transition: all .3s;
+        opacity: 0;
+    }
+    
+    &.md-show{
+        .md-content{
+            transform: translateY(0%);
+            border-radius: 0 0 $modal_border_radius $modal_border_radius;
+            opacity: 1;
+        }
+    }
+}

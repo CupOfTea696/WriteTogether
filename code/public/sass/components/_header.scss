@@ -1,0 +1,130 @@
+$header_height: 40px !default;
+$header_padding: 10% !default;
+$header_margin: 24px !default;
+$header_button_padding: 24px !default;
+$header_gradient: false !default;
+$header_color: rgba(#000, 0) !default;
+
+$header_border_color: null !default;
+$header_shadow: null !default;
+
+#container{
+    main{
+        padding-top: $header_height + $header_margin;
+    }
+    
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: $header_height;
+        padding: 0 $header_padding;
+        color: $textColor;
+        border-bottom: 1px solid rgba(#FFF, .4);
+        z-index: 99;
+        
+        @if $header_border_color != null{
+            border-bottom: 1px solid $header_border_color;
+        }
+        @if $header_shadow != null{
+            box-shadow: $header_shadow;
+        }
+        @if $header_gradient{
+            @include linear-gradient(lighten($accentColor, 5%), darken($accentColor, 5%));
+        }@else{
+            background: $header_color;
+        }
+        .header_wrapper
+        {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        a{
+            display: block;
+            height: $header_height;
+            line-height: $header_height;
+            padding: 0 $header_button_padding;
+            float: left;
+            color: inherit;
+            font-size: 13.94pt;
+            font-weight: 200;
+            
+            &.icn{
+                font-size: 2em;
+            }
+            
+            &:hover{
+                color: inherit;
+                text-decoration: none;
+                
+                @if $header_gradient{
+                    @include linear-gradient(lighten($accentColor, 10%), $accentColor);
+                }@else{
+                    background: lighten($header_color, 5%);
+                }
+            }
+            
+            &:active{
+                @if $header_gradient{
+                    @include linear-gradient($accentColor, darken($accentColor, 10%));
+                }@else{
+                    background: rgba(#000, .05);
+                }
+            }
+        }
+        
+        .logo, nav{
+            height: $header_height;
+        }
+        
+        .logo{
+            line-height: $header_height;
+            float: left;
+            padding: 0 $header_button_padding;
+            font-family: $headingFont;
+            font-size: 1.5em;
+            
+            a{
+                display: block;
+                width: 150px;
+                height: 100%;
+                padding: 0 $header_button_padding;
+                background: url('../img/Logo.svg') no-repeat center center;
+                background-size: 150px;
+                box-sizing: content-box;
+                
+                &:hover{
+                    color: inherit;
+                    text-decoration: none;
+                    background-color: lighten($header_color, 5%);
+                }
+                
+                &:active{
+                    background-color: rgba(#000, .05);
+                }
+            }
+        }
+        
+        nav{
+            &:not(.right){
+                float: left;
+            }
+            
+            &.right{
+                float: right;
+            }
+        }
+    }
+}
+
+#container main:before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $header_height;
+    background: linear-gradient(to right, #F2785D 0%, #F05863 100%);
+    z-index: 98;
+}

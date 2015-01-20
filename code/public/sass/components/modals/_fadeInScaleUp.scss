@@ -1,0 +1,14 @@
+.md-fadeInScaleUp{
+    .md-content{
+        transform: scale(.7);
+        opacity: 0;
+        transition: all .3s;
+    }
+    
+    &.md-show{
+        .md-content{
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}

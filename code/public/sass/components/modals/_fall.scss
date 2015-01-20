@@ -1,0 +1,41 @@
+.md-fall,
+.md-sideFall{
+    @extend %perspective;
+    
+    .md-content{
+        transform-style: preserve-3d;
+        transform: translateZ(600px) rotateX(20deg); 
+        opacity: 0;
+    }
+    
+    &.md-show{
+        .md-content{
+            transition: all 0.3s ease-in;
+            opacity: 1;
+        }
+    }
+}
+
+.md-fall{
+    .md-content{
+        transform: translateZ(600px) rotateX(20deg); 
+    }
+    
+    &.md-show{
+        .md-content{
+            transform: translateZ(0px) rotateX(0deg);
+        }
+    }
+}
+
+.md-sideFall{
+    .md-content{
+        transform: translate(30%) translateZ(600px) rotate(10deg); 
+    }
+    
+    &.md-show{
+        .md-content{
+            transform: translate(0%) translateZ(0) rotate(0deg);
+        }
+    }
+}

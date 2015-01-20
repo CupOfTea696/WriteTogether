@@ -1,0 +1,483 @@
+@import "components/header";
+// @import "components/footer";
+@import "components/books";
+@import "components/icons";
+@import "components/modals";
+// uncomment the modals u want to use
+// use the var $modal-border-radius to change the border radius. By default it is 3px.
+// Modal structure:
+//  div.md-modal.md-{modalName e.g. flip3D}?.md-show
+//      div.md-content
+//          header
+//              h1
+//          section.body
+// Also right before the script tags you need a div.md-overlay
+// and the modal needs to be placed directly in the body tag.
+    //@import "components/modals/blur";
+    //@import "components/modals/fadeInScaleUp";
+    //@import "components/modals/fall";
+    //@import "components/modals/flip3D";
+    @import "components/modals/justMe";
+    //@import "components/modals/letMeIn";
+    //@import "components/modals/makeWay";
+    //@import "components/modals/newspaper";
+    //@import "components/modals/rotate3D";
+    //@import "components/modals/sign3D";
+    //@import "components/modals/slideIn";
+    //@import "components/modals/slit3D";
+    //@import "components/modals/sticky";
+    //@import "components/modals/superScaled";
+
+// reusable components
+
+//HEADER CSS
+#container
+{
+  max-width:1400px;
+  margin: 0 auto;
+}
+#registered
+{
+  border-radius: 0px 3px 3px 0px;
+  background-color: red;
+  padding: 5px 10px 5px 20px;
+  position:relative;
+
+  font-size: 9pt;
+}
+a
+{
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.no-border-header
+{
+  border: none!important;
+}
+//body
+h4
+{
+  padding-top: 150px;
+  display: inline-block;
+  font-weight: 200;
+  border-bottom: 1px solid;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-size: 14px;
+  margin-bottom: 0;
+  padding-bottom: 1.33em;
+}
+.nofloat
+{
+  clear: both;
+}
+.profile-header:first-child
+{
+  padding-top: 0px;
+}
+
+#profile-container
+{
+  width: 60%;
+  margin: 0 auto;
+
+  padding: 30px;
+  text-align: left;
+  h4:first-child
+  {
+
+    padding-top: 0;
+  }
+  h4
+  {
+    padding-top: 30px;
+  }
+  #profile-welcome
+  {
+    p
+    {
+      font-size: 24pt;
+      padding: 0;
+      margin: 0;
+      font-weight: 200;
+      text-transform: capitalize;
+      display:block;
+      width: 300px;
+      b{
+        font-size:25pt;
+        margin-right: 40px;
+      }
+    }
+  }
+  #profile-functions
+  {
+    padding-top: 20px;
+  }
+  .profile-text
+  {
+
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    p
+    {
+
+      margin: 0;
+    }
+  }
+
+}
+
+.capitalize
+{
+  text-transform: capitalize!important;
+}
+
+.gravatar
+{
+  background-color: yellow;
+  float: left;
+  display:block;
+  width: 75px;
+  margin-top: 20px;
+}
+button, input[type='submit'], input[type='button'], .button
+{
+  color: white;
+  background-color: transparent;
+  padding: 20px 40px;
+  border: 1px solid white;
+  float: left;
+  margin-right: 20px;
+}
+.buy_h3
+{
+  margin:0;
+  padding:0;
+  float:right;
+}
+#story-write, #story-read, #story-buy
+{
+  padding-top: 150px!important;
+}
+
+button:hover, input[type='submit']:hover, input[type='button']:hover, .button:hover,
+.textarea_write, .facts_container, pre, .review_login_form .form-group input, .buy_form .form-group input, #profile-container, .admin_panel
+{
+  background: lighten($header_color, 90%);
+}
+main
+{
+  width: 95%;
+  margin: 0 auto 20px auto;
+
+  .page
+  {
+    &.middle
+    {
+      width: 100%;
+      text-align: center;
+    }
+    &.right
+    {
+      width: 50%;
+      text-align: left;
+      float: right;
+    }
+    &.left
+    {
+      clear:both;
+      float:left;
+      text-align: left;
+      width:50%;
+    }
+
+  }
+  h4, h2, .page p
+  {
+    text-align: left;
+  }
+  h2
+  {
+    font-size: 60px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 70px;
+  }
+  h3
+  {
+    padding-top: 250px;
+    margin: 0;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    font-size: 38px;
+    text-align: center;
+    font-weight: 200;
+    b
+    {
+      font-weight:700;
+      font-style: italic;
+    }
+  }
+
+  .page p
+  {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    b
+    {
+      font-weight: 700;
+      font-style: italic;
+    }
+  }
+}
+
+//modal css
+.md-content
+{
+  padding: 30px; //cunt
+  h3
+  {
+    font-size: 22pt;
+    margin: 0 0 20px 0;
+
+  }
+  .modal-header
+  {
+    margin-bottom: 30px;
+  }
+  #login_form,.review_login_form,.buy_form
+  {
+    color: $textColor;
+    .form-group
+    {
+      margin-bottom: 15px;
+      display: block;
+      label[for="rememberme"]
+      {
+        font-size: 9pt;
+      }
+      ::-webkit-input-placeholder {
+        color: #fff;
+      }
+
+      :-moz-placeholder { /* Firefox 18- */
+        color: #fff;
+      }
+
+      ::-moz-placeholder {  /* Firefox 19+ */
+        color: #fff;
+      }
+
+
+      :-ms-input-placeholder {
+        color: #fff;
+      }
+      input:-webkit-autofill {
+        -webkit-box-shadow:0 0 0 50px #F27F5A inset; /* Change the color to your own background color */
+        -webkit-text-fill-color: white;
+      }
+      input:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 50px #F27F5A inset;
+        -webkit-text-fill-color: white;
+      }
+      input[type='text'], input[type='email'], input[type='password']
+      {
+        background-color: #F27F5A;
+        color: #fff;
+        padding: 10px 20px;
+        border: 1px solid white;
+      }
+      #rememberme
+      {
+        background-color: #F27F5A;
+        border: 1px solid white;
+        padding: 5px;
+
+      }
+    }
+
+
+  }
+
+}
+.write_story
+{
+  @include outer-container(100);
+}
+#write_container
+{
+  @include span-columns(8);
+}
+#read_container
+{
+  @include span-columns(12);
+  padding-bottom: 20px;
+  .author-text
+  {
+    position:relative;
+    top: -40px;
+    float:right;
+    height: 0;
+    padding-right: 20px;
+    margin: 0;
+    display:none;
+  }
+
+}
+#write_container, #read_container
+{
+
+  h4
+  {
+    text-align: left!important;
+    padding: 0;
+    padding-bottom: 10px;
+    margin:0;
+  }
+  pre
+  {
+    margin-bottom: 32px;
+  }
+  pre, .textarea_write
+  {
+    padding: 20px;
+    margin-top: 16px;
+    font-family: $mainFont;
+  }
+  .textarea_write
+  {
+    width: 100%;
+    height: 300px;
+    border: none;
+    resize: none;
+    line-height: 20pt;
+    overflow: hidden;
+    transition: height .25s;
+  }
+  .word-counter
+  {
+    text-align: right;
+    float: right;
+      
+    span{
+        color: #FFBBBA;
+        transition: all .25s;
+        
+        &.valid{
+            color: #CCFCE2;
+        }
+    }
+  }
+}
+
+
+.facts_container
+{
+  @include span-columns(3);
+  @include shift(1);
+  position:relative;
+  top: 43px;
+  p
+  {
+    padding-left: 20px;
+  }
+  ul
+  {
+    margin-left: 10px;
+    li
+    {
+      padding-bottom: 5px;
+      text-transform: capitalize;
+      letter-spacing: 0.5px;
+      transform: height 1s;
+    }
+  }
+
+
+}
+.buy_form
+{
+  margin-bottom: 20px;
+}
+.admin_panel
+{
+  position:fixed;
+  display:none;
+  width: 100%;
+  top: 100px;
+  right: 0px;
+  border-bottom: 1px solid white;
+  h6
+  {
+    float: left;
+    font-size: 12pt;
+    margin: 0;
+    margin-right: 30px;
+    padding: 0;
+  }
+  ul
+  {
+    margin:0;
+    padding: 0;
+    float:left;
+  }
+  h6, ul li
+  {
+    padding: 20px;
+  }
+  ul li
+  {
+    float: left;
+
+    margin-right: 30px;
+    list-style-type: none;
+  }
+  ul li:hover
+  {
+    @if $header_gradient{
+      @include linear-gradient(lighten($accentColor, 10%), $accentColor);
+    }@else{
+      background: lighten($header_color, 5%);
+    }
+  }
+}
+.review_login_form, .buy_form
+{
+  .form-group
+  {
+    float:left;
+    input
+    {
+      padding: 5px;
+      padding-left: 10px;
+      border: none;
+      margin-right: 15px;
+      color: white;
+    }
+    input:-webkit-autofill {
+
+      -webkit-text-fill-color: white;
+    }
+    input:-webkit-autofill:focus {
+      -webkit-text-fill-color: white;
+    }
+    ::-webkit-input-placeholder { /* WebKit browsers */
+      color: white;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color: white;
+      opacity:  1;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color: white;
+      opacity:  1;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10+ */
+      color: white;
+    }
+  }
+}

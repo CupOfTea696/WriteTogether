@@ -1,0 +1,24 @@
+.md-justMe{
+    .md-content{
+        background: transparent;
+        transform: scale(.8);
+        opacity: 0;
+        transition: all .3s;
+    }
+    
+    .md-content h3,
+    .md-content{
+        background: transparent;
+    }
+    
+    &.md-show{
+        ~ .md-overlay{
+            background: $mainColor;
+        } 
+        
+        .md-content{
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}

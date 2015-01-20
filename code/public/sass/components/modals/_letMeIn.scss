@@ -1,0 +1,28 @@
+.md-letMeIn{
+    ~ #container,
+    ~ .md-overlay{
+        transition: all .3s .2s;
+        transform-origin: 50% 0%;
+        transform-style: preserve-3d;
+    }
+    
+    .md-content{
+        opacity: 0;
+        transform: translateY(200%);
+        transition: all .3s;
+    }
+    
+    &.md-show{
+        ~ #container,
+        ~ .md-overlay{
+            transform: rotateX(-2deg);
+            transition: all .3s;
+        }
+        
+        .md-content{
+            transform: translateY(0);
+            opacity: 1;
+            transition: all .3s .2s;
+        }
+    }
+}

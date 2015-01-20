@@ -1,0 +1,56 @@
+[class*=md-rotate3D]{
+    @extend %perspective;
+    
+    .md-rotate3DTop, .md-rotate3DBottom{
+        &.md-show{
+            .md-content{
+                transform: translateY(0%) rotateX(0deg);
+            }
+        }
+    }
+    
+    .md-rotate3DLeft, .md-rotate3DRight{
+        &.md-show{
+            .md-content{
+                transform: translateZ(0px) translateX(0%) rotateY(0deg);
+            }
+        }
+    }
+    
+    .md-rotate3DTop{
+        .md-content{
+            transform: translateY(-100%) rotateX(-90deg);
+        }
+    }
+    
+    .md-rotate3DRight{
+        .md-content{
+            transform: translateZ(100px) translateX(30%) rotateY(-90deg);
+        }
+    }
+    
+    .md-rotate3DBottom{
+        .md-content{
+            transform: translateY(100%) rotateX(90deg);
+        }
+    }
+    
+    .md-rotate3DLeft{
+        .md-content{
+            transform: translateZ(100px) translateX(-30%) rotateY(90deg);
+        }
+    }
+    
+    .md-content{
+        transform-style: preserve-3d;
+        transform-origin: 0 100%;
+        opacity: 0;
+        transition: all .3s ease-out;
+    }
+    
+    &.md-show{
+        .md-content{
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+// required
+@import "core/normalize";
+@import "fonts";
+@import "core/bourbon/bourbon";
+@import "core/neat/neat";
+
+// vars
+$mainFont: "Source Sans Pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "HelveticaNeue", $helvetica;
+$headingFont: "Source Sans Pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "HelveticaNeue", $helvetica;
+
+$mainColor: #F27F5A;
+$accentColor: #00F;
+$textColor: #FFF;
+
+$page_margin: 5%;
+
+$header_height: 100px;
+$header_padding: $page_margin;
+$header_margin: 28px;
+$header_button_padding: 40px;
+$header_color: rgba(#FFF, .1);
+
+// core
+@import "core";
+
+// app
+@import "skeleton";
+@import "components";
+
+//pages
+@import "pages";

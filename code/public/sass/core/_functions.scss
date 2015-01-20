@@ -1,0 +1,44 @@
+@function add($some-number, $another-number){
+    @return $some-number + $another-number
+}
+
+@function headings($start: 1, $end: 0){
+    @if $end == 0{
+        @if $start == 1{
+        $end: 6;
+        } @else{
+        $end: $start;
+        $start: 1;
+        }
+    }
+    
+    $string: "";
+    @for $i from $start through $end{
+        $string: $string+ "h" + $i;
+        
+        @if $i < $end{
+            $string: $string + ", ";
+        }
+    }
+    
+    @return $string;
+}
+
+@function brightness($color){
+    @return ((red($color) * .299) + (green($color) * .587) + (blue($color) * .114)) / 255 * 100%;
+}
+
+$dark-contrast-default: #000 !default;
+$light-contrast-default: #fff !default;
+
+@function color-contrast($color, $dark: $dark-contrast-default, $light: $light-contrast-default) {
+    @if($color == null){
+        @return null;
+    }@else{
+        $color-brightness: brightness($color);  
+        $light-contrast-brightness: brightness($light);
+        $dark-contrast-brightness: brightness($dark);
+        
+        @return if(abs($color-brightness - $light-contrast-brightness) > abs($color-brightness - $dark-contrast-brightness), $light, $dark);  
+    }
+}

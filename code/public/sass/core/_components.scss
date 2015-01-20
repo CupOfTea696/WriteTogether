@@ -1,0 +1,20 @@
+label{
+    cursor: pointer;
+}
+
+%flexRow, %flexCol{
+    display: flex;
+}
+%flexRow{
+    flex-direction: row;
+}
+%flexCol{
+    flex-direction: column;
+}
+
+%flexAround{
+    @include justify-content(space-around);
+}
+%flexBetween{
+    @include justify-content(space-between);
+}
